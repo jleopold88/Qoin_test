@@ -103,7 +103,15 @@ func main() {
 			if done[i] == 1 {
 				println("Pemain #", i+1, "(", score[i], ") : ", "_(Berhenti bermain karena tidak memiliki dadu)")
 			} else {
-				println("Pemain #", i+1, "(", score[i], ") : ", play[i])
+				print("Pemain #", i+1, "(", score[i], ") : ")
+				for j := range play[i] {
+					if play[i][j] == 0 {
+						print(1, " ")
+					} else {
+						print(play[i][j], " ")
+					}
+				}
+				println()
 			}
 		}
 		println("========================================================================")

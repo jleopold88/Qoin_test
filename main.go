@@ -41,7 +41,7 @@ func main() {
 		for j := range play[i] {
 			play[i][j] = rand.Intn(6) + 1
 		}
-		println("Pemain #", i+1, "(", score[i], ") : ", play[i])
+		print("Pemain #", i+1, "(", score[i], ") : ", play[i], "\n")
 	}
 	println("========================================================================")
 
@@ -101,7 +101,7 @@ func main() {
 		}
 		for i := range play {
 			if done[i] == 1 {
-				println("Pemain #", i+1, "(", score[i], ") : ", "_(Berhenti bermain karena tidak memiliki dadu)")
+				print("Pemain #", i+1, "(", score[i], ") : ", "_(Berhenti bermain karena tidak memiliki dadu)\n")
 			} else {
 				print("Pemain #", i+1, "(", score[i], ") : ")
 				for j := range play[i] {
@@ -119,11 +119,14 @@ func main() {
 			break
 		}
 
+		println("===========================NEW ROLL===========================")
 		for i := range play {
 			for j := range play[i] {
 				play[i][j] = rand.Intn(6) + 1
 			}
+			print("Pemain #", i+1, "(", score[i], ") : ", play[i], "\n")
 		}
+		println("===========================NEW ROLL===========================")
 
 	}
 	println("Pemenang adalah Pemain #", max(score)+1)
